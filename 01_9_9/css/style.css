@@ -1,0 +1,14 @@
+table {
+    width: 500px;
+    height: 500px;
+}
+th {
+    text-align: center;
+    background-color: antiquewhite;
+}
+td {
+    text-align: center;
+}
+.bg-aquamarine {
+    background-color: aquamarine;
+}
