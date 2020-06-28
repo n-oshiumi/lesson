@@ -1,0 +1,35 @@
+#main {
+    width: 35rem;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+#date-title {
+    font-size: 1.6rem;
+    width: 11rem;
+    text-align: center;
+    margin: 0rem 1rem;
+}
+table {
+    margin: 0 auto;
+    width: 100%;
+}
+
+th, td {
+    padding: 0.8rem 1rem;
+    text-align: center;
+}
+
+.nav-year {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-month {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-year-back:visited, .nav-year-next:visited, .nav-month-back:visited, .nav-month-next:visited {
+    text-decoration: none;
+}
