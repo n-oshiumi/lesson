@@ -7,18 +7,20 @@ $baseUrl = $_SERVER['SCRIPT_NAME'];
 $now = new DateTime();
 
 // 指定月をセット
-$selectedYear = $_GET["year"] ?? $now->format("Y");
-$selectedMonth = $_GET["month"] ?? $now->format("m");
+$selectedYear = (int)$_GET["year"] ?? $now->format("Y");
+$selectedMonth = (int)$_GET["month"] ?? $now->format("m");
 
-// 前年・次年、前月・次月をセット
-$previousYear = (int)$selectedYear - 1;
-$nextYear = (int)$selectedYear + 1;
-$previousMonth = (int)$selectedMonth - 1;
-$nextMonth = (int)$selectedMonth + 1;
 
 // 月の初日をセット
-$firstDate = new DateTime();
-$firstDate->setDate($selectedYear, $selectedMonth, 1);
+$firstDate = new DateTimeImmutable($selectedYear . "-" . $selectedMonth. "-1");
+
+// 前月・次月を取得する
+$previousMonth = $firstDate->modify("-1 months");
+$nextMonth = $firstDate->modify("+1 months");
+$previousYear = $firstDate->modify("-1 years");
+$nextYear= $firstDate->modify("+1 years");
+
+
 
 // 曜日の配列を作成
 $day_of_week = ["日", "月", "火", "水", "木", "金", "土"];
@@ -47,13 +49,13 @@ for ($j=1; $j<=$number_of_days; $j++) {
 <body>
     <div id="main">
         <div class="nav-year">
-            <div class="nav-year-back"><a href="<?php echo $baseUrl . "?year=" . $selectedYear . "&month=" . $previousMonth  ?>">＜</a></div>
-            <h1 id="date-title"><?php echo $selectedYear . "年" . $selectedMonth . "月"; ?></h1>
-            <div class="nav-year-next"><a href="<?php echo $baseUrl . "?year=" . $selectedYear . "&month=" . $nextMonth  ?>">＞</a></div>
+            <div class="nav-year-back"><a href="<?php echo htmlentities($baseUrl . "?year=" . $previousYear->format('Y') . "&month=" . $previousYear->format('m'));  ?>">＜</a></div>
+            <h1 id="date-title"><?php echo htmlentities($firstDate->format('Y') . "年" . $firstDate->format('m') . "月"); ?></h1>
+            <div class="nav-year-next"><a href="<?php echo htmlentities($baseUrl . "?year=" . $nextYear->format('Y') . "&month=" . $nextYear->format('m'));  ?>">＞</a></div>
         </div>
         <div class="nav-month">
-            <div class="nav-month-back"><a href="<?php echo $baseUrl . "?year=" . $selectedYear . "&month=" . $previousMonth  ?>">前月</a></div>
-            <div class="nav-month-next"><a href="<?php echo $baseUrl . "?year=" . $selectedYear . "&month=" . $nextMonth  ?>">次月</a></div>
+            <div class="nav-month-back"><a href="<?php echo htmlentities($baseUrl . "?year=" . $previousMonth->format('Y') . "&month=" . $previousMonth->format('m'));  ?>">前月</a></div>
+            <div class="nav-month-next"><a href="<?php echo htmlentities($baseUrl . "?year=" . $nextMonth->format('Y') . "&month=" . $nextMonth->format('m'));  ?>">次月</a></div>
         </div>
         <table border="1">
             <tr>
