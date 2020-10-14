@@ -1,0 +1,296 @@
+
+/* 共通 */
+body {
+    font-size: 16px;
+    background-color: #F6F6F4;
+    color: #59545B;
+}
+
+a {
+    color: #59545B;
+    text-decoration: none;
+}
+a:visited {
+    color: #59545B;
+}
+
+.page-main {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+}
+
+.page-title {
+    text-align: center;
+}
+
+/* バリデーション */
+.validation-errors {
+    background-color: thistle;
+    color: tomato;
+    border: solid 1px thistle;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.6rem;
+}
+
+/* Info */
+.info-messages {
+    background-color: #13A3B8;
+    color: #fff;
+    border: solid 1px #13A3B8;
+    border-radius: 20px;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.6rem;
+}
+
+/* スレッド一覧 */
+.thread-list {
+    background-color: white;
+    padding: 1.6rem 3rem;
+    margin-bottom: 2rem;
+    border: solid 1px gainsboro;
+}
+
+.thread-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+#thread-user-image {
+    margin-right: 0.3rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.thread-user-name, .thread-posted-at {
+    font-size: 0.9rem;
+    color: grey;
+}
+
+.thread-posted-at {
+    margin-left: 1rem;
+}
+
+/* スレッド詳細 */
+
+#board-list-wrapper {
+    background-color: white;
+}
+
+#post-title, #page-board-title {
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+#user-post-content {
+    background-color: azure;
+}
+
+.board-list {
+    background-color: white;
+    padding: 1.6rem 3rem;
+    margin-bottom: 1rem;
+    border-bottom: solid 1px #E9E9E9;
+}
+
+.board-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.user-image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    margin-right: 1rem;
+}
+.board-posted-at{
+    color: grey;
+    font-size: 0.8rem;
+}
+
+.board-user-name {
+    font-size: 1.1rem;
+}
+
+.board-auth-user-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.board-auth-user-content {
+    margin-top: 1rem;
+}
+
+.board-edit, .board-delete, .comment-edit, .delete-comment-image {
+    font-size: 0.9rem;
+    margin-left: 0.6rem;
+    cursor: pointer;
+}
+
+#page-comment-create {
+    margin-bottom: 1rem;
+}
+
+#thread-comment-create {
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px darkgray;
+    padding: 0.6rem;
+}
+
+#thread-comment-post-button-wrapper {
+    text-align: right;
+}
+
+/* スレッド投稿画面 */
+#thread-post {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+
+#thread-post-submit {
+    width: 100%;
+    padding: 0.5rem;
+    cursor: pointer;
+    margin-top: 1.3rem;
+}
+
+/* 会員登録 */
+
+.user-register-block {
+    margin-bottom: 1rem;
+}
+
+.register-label {
+    display: inline-block;
+    width: 10rem;
+}
+
+.register-input {
+    width: 50%;
+    padding: 0.6rem ;
+}
+
+#register-button-wrapper {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.register-login-link {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+#page-index-subtitle {
+    display: flex;
+    align-items: center;
+}
+#thread-post-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: gray;
+    border: solid 2px gray;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-left: 1rem;
+}
+
+.comment-content {
+    width: 100%;
+    font-size: 1rem;
+    font-weight: normal;
+    border: none;
+    font: unset;
+    color: #59545B;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    resize: none;
+    padding: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    cursor: default;
+    padding: 0.5rem;
+}
+
+.comment-content[read-only="false"] {
+    color: red;
+}
+
+.editable {
+    background-color: cornsilk;
+    border: solid 1px gray;
+    cursor: text;
+    font-size: 14px;
+}
+
+.comment-update {
+    display: none;
+}
+
+.editable ~ .comment-update {
+    display: block;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .nav-back {
+    margin-left: 1rem;
+    margin-top: 1rem;
+    padding: 0.3rem;
+    color: gray;
+}
+
+#header .navbar-item {
+    margin-right: 1rem;
+    margin-top: 1rem;
+    padding: 0.3rem;
+    color: gray;
+    border: solid 1px gray;
+    background-color: #fff;
+}
+
+img {
+    width: 100%;
+    border: solid 1px gray;
+    margin: 1rem 0rem;
+}
+
+.edit-post-image {
+    width: 70%;
+}
+
+.delete-post-button {
+    font-size: 14px;
+    color: #0000ee	;
+}
+.edit-post-image > img {
+    margin: 0 !important;
+}
+
+.mg-8 {
+    margin-bottom: 8px;
+}
